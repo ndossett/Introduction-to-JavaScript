@@ -23,11 +23,8 @@ if(skyColor === "lightBlue"){
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-var text = '1999';
-var integer = parseInt(text, 10);
-console.log(integer);
-
-
+let text = '1999';
+console.log(Number(text));
 
 
 //Task d: Write a function to multiply a*b 
@@ -70,6 +67,16 @@ function dogFeeding(weight, age) {
         return weight * 0.05;
     }else if(age >= 1 && weight <=10) {
         return weight * 0.04;
+    }else if(age >= 1 && weight <=15) {
+        return weight * 0.03;
+    }else if(age >= 1 && weight >15) {
+        return weight * 0.02;
+    }else if(age <= 0.333333) {
+        return weight * .1;
+    }else if(age <= 0.583333){
+        return weight * .05;
+    }else {
+        return weight * .04
     }
 }
 
@@ -81,30 +88,66 @@ function dogFeeding(weight, age) {
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
-function computerMove(){
-    const cpuMove = Math.floor(Math.random()*3) +1;
-    const rock = 1;
-    const paper = 2
-    const scissors = 3
-    const cpuMove = 
+const playerChoice = prompt ("Do you choose rock, paper or scissors?");  
+function rpsGame(player) {
+    let comChoice = "";
+    const num = Math.floor(Math.random() * 3);
     
-    if (cpuMove ===1) {
-      return "rock"
+    if (num ===1) {
+      comChoice = "rock";
+    }else if (num ===2){
+        comChoice = "paper";
+    }else {
+        comChoice = "scissors";
+    }
+
+    if(playerChoice === comChoice) {
+        return "The result is a tie!";
+    }
+    if(player === "rock") {
+        if(comChoice === "scissors") {
+            return "you win";
+        }else {
+            if(comChoice === "paper") {
+                return "you lose";
+            }
+        }
+    }
+    if(player === "paper") {
+        if(comChoice === "rock") {
+            return "you win";
+        }else {
+            if(comChoice === "scissors") {
+                return "you lose";
+            }
+        }
+    }
+    if(player === "scissors") {
+            if(comChoice === "paper") {
+                return "you win";
+            }else {
+                if(comChoice === "rock") {
+                    return "you lose";
+            }
+        }
     }
   }
-  
   
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
-
+function convertKM(km) {
+    return km * 0.62
+}
 
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+  function convertFt(ft) {
+      return ft * 30.48
+  }
 
 
 
@@ -129,7 +172,19 @@ for(let i = 99; i > 0; i--){
 //60s should be D 
 //and anything below 60 should be F
   
-
+function letterGrade(num) {
+    if(num >= 90) {
+        return "A";
+    }else if(num >= 80) {
+        return "B";
+    }else if(num >= 70) {
+        return "C";
+    }else if(num >= 60) {
+        return "D";
+    }else {
+        return "F"
+    }
+}
   
   
 
