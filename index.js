@@ -32,7 +32,7 @@ console.log(integer);
 
 //Task d: Write a function to multiply a*b 
 function product(a,b) {
-    return
+    return a*b;
 }
 
 
@@ -42,8 +42,9 @@ function product(a,b) {
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
+function dogYears(num) {
+    return num*7
+}
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -113,7 +114,9 @@ function computerMove(){
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-
+for(let i = 99; i > 0; i--){
+    console.log(`${i} bottles of soda on the wall, ${i} bottle of soda, take one down pass it around, ${i-1} bottles of soda on the wall`)
+  }
 
 
 
